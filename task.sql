@@ -50,11 +50,6 @@ CREATE TABLE Users (
 --rollback DROP TABLE Users;
 
 --changeset mate.acamemy:6 labels:0.0.3
-CREATE TABLE Email (
-    ID INT AUTO_INCREMENT,
-    Email VARCHAR(50),
-	FOREIGN KEY (EmailID) REFERENCES Users(ID) ON DELETE NO ACTION,
-    PRIMARY KEY (ID)
-);
---rollback DROP TABLE Email;
+CREATE UNIQUE INDEX Email ON Users(Email);
+--rollback DROP Index Email ON Users;
 
