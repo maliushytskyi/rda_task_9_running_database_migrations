@@ -50,6 +50,6 @@ CREATE TABLE Users (
 --rollback DROP TABLE Users;
 
 --changeset mate.acamemy:6 labels:0.0.3
-CREATE UNIQUE INDEX Email ON Users(Email);
+CREATE INDEX Email ON Users(Email);
 --rollback DROP Index Email ON Users;
 
