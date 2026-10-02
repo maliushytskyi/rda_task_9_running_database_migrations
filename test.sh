@@ -16,14 +16,14 @@ docker exec mysql sh -c 'mysql -u root -pP@ssw0rd < /scripts/test-queries/1-crea
 
 ### v0.0.1
 echo "INFO: Running the database migration 0.0.1"
-docker run --network=test-network -v $(pwd):/repos --workdir /repos/ -e INSTALL_MYSQL=true  \
+docker run --network=test-network -v $(pwd):/repos --workdir /repos/ -e INSTALL_MYSQL=true \
     -e LIQUIBASE_COMMAND_USERNAME=root \
     -e LIQUIBASE_COMMAND_PASSWORD=P@ssw0rd \
     -e LIQUIBASE_COMMAND_URL=jdbc:mysql://mysql:3306/ShopDB \
     liquibase/liquibase liquibase update --labels="0.0.1" 
 
 echo "INFO: Tagging a database version (0.0.1)"
-docker run --network=test-network -v $(pwd):/repos --workdir /repos/ -e INSTALL_MYSQL=true  \
+docker run --network=test-network -v $(pwd):/repos --workdir /repos/ -e INSTALL_MYSQL=true \
     -e LIQUIBASE_COMMAND_USERNAME=root \
     -e LIQUIBASE_COMMAND_PASSWORD=P@ssw0rd \
     -e LIQUIBASE_COMMAND_URL=jdbc:mysql://mysql:3306/ShopDB \
