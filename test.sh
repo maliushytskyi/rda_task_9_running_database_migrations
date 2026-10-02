@@ -20,7 +20,7 @@ docker run --network=test-network -v $(pwd):/repos --workdir /repos/ -e INSTALL_
     -e LIQUIBASE_COMMAND_USERNAME=root \
     -e LIQUIBASE_COMMAND_PASSWORD=P@ssw0rd \
     -e LIQUIBASE_COMMAND_URL=jdbc:mysql://mysql:3306/ShopDB \
-    liquibase/liquibase liquibase update --labels="0.0.1" 
+    liquibase/liquibase liquibase update --labels="0.0.1" \
     -e LIQUIBASE_COMMAND_CHANGELOG_FILE=task.sql \
     liquibase/liquibase liquibase update --labels="0.0.1"
 
@@ -63,7 +63,7 @@ docker run --network=test-network -v $(pwd):/repos --workdir /repos/ -e INSTALL_
     -e LIQUIBASE_COMMAND_USERNAME=root \
     -e LIQUIBASE_COMMAND_PASSWORD=P@ssw0rd \
     -e LIQUIBASE_COMMAND_URL=jdbc:mysql://mysql:3306/ShopDB \
-    liquibase/liquibase liquibase update --labels="0.0.3" 
+    liquibase/liquibase liquibase update --labels="0.0.3" \
     -e LIQUIBASE_COMMAND_CHANGELOG_FILE=task.sql \
     liquibase/liquibase liquibase update --labels="0.0.3"
 
